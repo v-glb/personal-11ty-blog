@@ -1,5 +1,5 @@
 export default {
-	title: "Kaffeesatzmetaphorik",
+	title: "Kaffeesatzmetaphorik ☕",
 	url: "https://kaffeesatzmetaphorik.net/",
 	language: "de",
 	description: "Gedanken, Erlebnisse & Meditationen",
