@@ -2,23 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://kaffeesatzmetaphorik.net/blog/firstpost/</loc>
-		<lastmod>2018-05-01</lastmod>
+		<loc>https://kaffeesatzmetaphorik.net/blog/intro/</loc>
+		<lastmod>2025-03-22</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://kaffeesatzmetaphorik.net/blog/secondpost/</loc>
-		<lastmod>2018-07-04</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://kaffeesatzmetaphorik.net/blog/thirdpost/</loc>
-		<lastmod>2018-08-24</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://kaffeesatzmetaphorik.net/blog/fourthpost/</loc>
-		<lastmod>2018-09-30</lastmod>
+		<loc>https://kaffeesatzmetaphorik.net/blog/test-post/</loc>
+		<lastmod>2025-03-22</lastmod>
 	</url>
 	
 	<url>
@@ -28,6 +18,11 @@
 	
 	<url>
 		<loc>https://kaffeesatzmetaphorik.net/blog/</loc>
+		<lastmod>2025-03-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://kaffeesatzmetaphorik.net/contact/</loc>
 		<lastmod>2025-03-22</lastmod>
 	</url>
 	
