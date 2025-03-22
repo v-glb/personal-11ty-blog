@@ -6,6 +6,10 @@
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/icons8-pen-pulsar-color-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icons8-pen-pulsar-color-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-pen-pulsar-color-96.png">
+
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
 		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
@@ -60,7 +64,7 @@
 		</main>
 
 		<footer>
-			<p><em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
+			<p><em>Built with ❤️ and <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
 		</footer>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
