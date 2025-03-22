@@ -63,12 +63,12 @@ export default async function(eleventyConfig) {
 			limit: 10,
 		},
 		metadata: {
-			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			language: "de",
+			title: "Kaffeesatzmetaphorik",
+			subtitle: "Gednaken, Erlebnisse & Meditationen",
+			base: "https://kaffeesatzmetaphorik.net/",
 			author: {
-				name: "Your Name"
+				name: "Vadim"
 			}
 		}
 	});
