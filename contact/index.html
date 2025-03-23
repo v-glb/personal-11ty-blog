@@ -6,9 +6,9 @@
 		<title>Kaffeesatzmetaphorik ☕</title>
 		<meta name="description" content="Gedanken, Erlebnisse &amp; Meditationen">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Kaffeesatzmetaphorik ☕">
-<link rel="icon" type="image/png" sizes="16x16" href="/img/icons8-pen-pulsar-color-16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/icons8-pen-pulsar-color-32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-pen-pulsar-color-96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/img/icons8-pen-pulsar-color-16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/img/icons8-pen-pulsar-color-32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-pen-pulsar-color-96.png">
 		
 		<style>/* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
@@ -311,8 +311,16 @@ header {
 			<heading-anchors>
 				
 <h1 id="kontaktiere-mich">Kontaktiere mich</h1>
-<p>Wenn du mir eine Nachricht schreiben willst, kannst du das gerne per E-Mail tun: <strong>v[dot]networks[at]posteo[dot]de</strong>.</p>
-
+<p>Wenn du mir eine Nachricht schreiben willst, kannst du das gerne per E-Mail tun: <span id="email"></span></p>
+<script>
+	// JS obfucation to prevent spam bots from scraping
+	document.addEventListener('DOMContentLoaded', function() {
+		var user = 'v.networks';
+		var domain = 'posteo.de';
+		var email = user + '@' + domain;
+		document.getElementById('email').innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+	});
+</script>
 
 			</heading-anchors>
 		</main>
@@ -321,7 +329,7 @@ header {
 			<p><em>Built with ❤️ and <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
 		</footer>
 
-		<!-- This page `/contact/` was built on 2025-03-23T14:19:23.952Z -->
+		<!-- This page `/contact/` was built on 2025-03-23T14:41:37.526Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
