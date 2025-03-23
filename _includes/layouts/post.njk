@@ -6,6 +6,10 @@ layout: layouts/base.njk
 {%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
 <h1>{{ title }}</h1>
 
+{%- if image %}
+  <img src="{{ image }}" alt="{{ title }}" class="post-title-image">
+{%- endif %}
+
 <ul class="post-metadata">
 	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | germanDate }}</time></li>
 	{%- for tag in tags | filterTagList %}
