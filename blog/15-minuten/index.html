@@ -3,14 +3,181 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Tagged &#39;kurz-gesagt&#39;</title>
-		<meta name="description" content="Gedanken, Erlebnisse &amp; Meditationen">
+		<title>15 Minuten</title>
+		<meta name="description" content="Auf ein frohes neues Jahr 2025">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Kaffeesatzmetaphorik ☕">
 		<link rel="icon" type="image/png" sizes="16x16" href="/img/icons8-pen-pulsar-color-16.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/img/icons8-pen-pulsar-color-32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-pen-pulsar-color-96.png">
 		
-		<style>.postlist { counter-reset: start-from 2 }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
 /* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
@@ -227,22 +394,12 @@ header {
 .postlist {
 	list-style: none;
 	padding: 0;
-	padding-left: 1.5rem;
 }
 .postlist-item {
-	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
 	counter-increment: start-from -1;
 	margin-bottom: 1em;
-}
-.postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
 }
 .postlist-date,
 .postlist-item:before {
@@ -285,10 +442,62 @@ header {
 	gap: .5em;
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 1em 0;
 }
 .post-metadata time {
 	margin-right: 1em;
+}
+
+/* Custom CSS for posts overview */
+.postlist-item {
+  margin-bottom: 2em;
+}
+
+.postlist-item-content .postlist-link {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.postlist-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-left: 1em;
+  border-radius: 8px;
+  margin-top: 1em;
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postlist-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.postlist-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.postlist-link:hover .postlist-image {
+  filter: brightness(1.2);
+}
+
+.postlist-link p {
+  margin: 0.5em 0;
+  color: var(--text-color);
+}
+
+.postlist-description {
+  font-size: 0.8125em;
+  font-weight: normal;
+}
+
+.postlist-divider {
+  border: none;
+  border-bottom: 1px solid var(--color-gray-20);
 }</style>
 	</head>
 	<body>
@@ -311,20 +520,44 @@ header {
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="tagged-kurz-gesagt">Tagged “kurz-gesagt”</h1>
+<h1 id="15-minuten">15 Minuten</h1>
+  <picture><source type="image/avif" srcset="/img/u6yrVf6YZI-1920.avif 1920w"><source type="image/webp" srcset="/img/u6yrVf6YZI-1920.webp 1920w"><img loading="lazy" decoding="async" src="/img/u6yrVf6YZI-1920.jpeg" alt="15 Minuten" class="post-title-image" width="1920" height="1313"></picture>
 
+<ul class="post-metadata">
+	<li><time datetime="2024-12-31">31. Dezember 2024</time></li>
+	<li><a href="/tags/poesie/" class="post-tag">poesie</a></li>
+</ul>
 
+<p>15 Minuten<br>
+In denen sich die Seele spiegelt<br>
+15 Minuten<br>
+In denen Sterne explodieren</p>
+<p>Ein nachhallender Ton.</p>
+<p>Was bleibt?<br>
+Was kommt?</p>
+<p>10 Minuten<br>
+In denen sich Gedanken im Kreis drehen<br>
+10 Minuten<br>
+In denen aus Reflexionen Manifestationen werden</p>
+<p>Wohin?<br>
+Wozu?</p>
+<p>5 Minuten<br>
+In denen der Stift über das Papier kratzt<br>
+5 Minuten<br>
+In denen alles plötzlich klar wird</p>
+<p>Alles.<br>
+Nichts.<br>
+Dorthin.<br>
+Deshalb.</p>
+<p>Und wir sind immer noch hier.<br>
+525960 Minuten.</p>
 
-<ol reversed="" class="postlist">
-  <li class="postlist-item">
-    <a href="/blog/intro/" class="postlist-link">Intro</a>
-    <time class="postlist-date" datetime="2025-03-22">22. März 2025</time>
-  </li>
-</ol>
+<ul class="links-nextprev"><li class="links-nextprev-next">Nächster →<br><a href="/blog/eine-linie/">Eine Linie</a></li>
+</ul>
 
-
-<p><a href="/tags/">Alle Tags</a> sehen.</p>
-
+<h2 id="kommentare">Kommentare</h2>
+<div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="bccfefaf-1b52-4630-9245-c35798746aed" data-page-id="/blog/15-minuten/" data-page-url="/blog/15-minuten/" data-page-title="15 Minuten" data-theme="auto"></div>
+<script async="" defer="" src="https://cusdis.com/js/cusdis.es.js"></script>
 
 			</heading-anchors>
 		</main>
@@ -333,7 +566,7 @@ header {
 			<p><em>Built with ❤️ and <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
 		</footer>
 
-		<!-- This page `/tags/kurz-gesagt/` was built on 2025-03-23T14:41:37.525Z -->
+		<!-- This page `/blog/15-minuten/` was built on 2025-03-26T11:04:07.499Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
