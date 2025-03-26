@@ -2,8 +2,21 @@
 <ol reversed class="postlist">
 {%- for post in postslist | reverse %}
   <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | germanDate }}</time>
+    <div class="postlist-item-content">
+      <a href="{{ post.url }}" class="postlist-link">
+        <div class="postlist-text">
+          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+          <p class="postlist-description">{{ post.data.description }}</p>
+        </div>
+        {% if post.data.image %}
+          <img src="{{ post.data.image | url }}" alt="{{ post.data.title }}" class="postlist-image">
+        {% endif %}
+      </a>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | germanDate }}</time>
+    </div>
   </li>
+  {%- if not loop.last %}
+    <hr class="postlist-divider" />
+  {%- endif %}
 {%- endfor %}
 </ol>
